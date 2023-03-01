@@ -3,6 +3,7 @@
     <form @submit.prevent>
       <h4>Создания поста</h4>
       <my-input
+        v-focus
         v-model="post.title"
         type="text"
         class="input"
@@ -24,9 +25,7 @@
 </template>
 
 <script>
-
 export default {
-
   data() {
     return {
       post: {
@@ -38,8 +37,7 @@ export default {
   methods: {
     createPost() {
       this.post.id = Math.random();
-        this.$emit("create", this.post);
-     
+      this.$emit("create", this.post);
 
       this.post = {
         title: "",
@@ -47,7 +45,6 @@ export default {
       };
     },
   },
-
 };
 </script>
 
@@ -56,7 +53,6 @@ form {
   display: flex;
   flex-direction: column;
 }
-
 
 .post {
   margin-top: 50px;
@@ -68,8 +64,4 @@ strong {
   color: rgb(30, 39, 39);
   font-weight: 700;
 }
-
-
-
-
 </style>

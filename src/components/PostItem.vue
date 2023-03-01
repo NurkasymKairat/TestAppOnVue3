@@ -6,6 +6,8 @@
       <div><strong>Описания:</strong> {{ post.body }}</div>
     </div>
     <div class="post_btn">
+      <my-button @click="$router.push(`/post/${post.id}`)">Open</my-button>
+
       <my-button @click="$emit('remove', post)">Delete</my-button>
     </div>
   </div>
@@ -32,4 +34,5 @@ export default {
   padding: 15px;
   border: 2px solid teal;
 }
+
 </style>
